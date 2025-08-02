@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Rates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+        .title-section {
+            background: linear-gradient(135deg, #4a5568, #2d3748);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .current-rates {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .rate-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .currency-code {
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .rate-value {
+            background: #e53e3e;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .aed-rate {
+            background: #3182ce;
+        }
+
+        .usdt-rate {
+            background: #38a169;
+        }
+
+        .timestamp {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .rates-table {
+            background: white;
+            padding: 20px;
+        }
+
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 15px;
+        }
+
+        .table-header span {
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .rate-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f5f9;
+            align-items: center;
+        }
+
+        .rate-row:hover {
+            background: #f8fafc;
+        }
+
+        .date-cell {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .rate-cell {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 14px;
+        }
+
+        .background-pattern {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f1f5f9' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-pattern"></div>
+    
+    <div class="container">
+
+        <div class="title-section">
+            <h1 class="title">Rates</h1>
+            
+            <div class="current-rates">
+                <div class="rate-card">
+                    <div class="currency-code">AED</div>
+                    <div class="rate-value aed-rate">24.55</div>
+                    <div class="timestamp">Date: 02-08-2025 03:34:12 PM</div>
+                </div>
+                <div class="rate-card">
+                    <div class="currency-code">USDT</div>
+                    <div class="rate-value usdt-rate">89.80</div>
+                    <div class="timestamp">Date: 02-08-2025 03:34:12 PM</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rates-table">
+            <div class="table-header">
+                <span>Date</span>
+                <span>AED Rate</span>
+                <span>USDT Rate</span>
+            </div>
+
+            <div class="rate-row">
+                <div class="date-cell">02-08-2025 03:34:12 PM</div>
+                <div class="rate-cell">24.55</div>
+                <div class="rate-cell">89.80</div>
+            </div>
+
+            <div class="rate-row">
+                <div class="date-cell">02-08-2025 03:33:45 PM</div>
+                <div class="rate-cell">24.60</div>
+                <div class="rate-cell">89.80</div>
+            </div>
+
+            <div class="rate-row">
+                <div class="date-cell">31-07-2025 03:29:18 PM</div>
+                <div class="rate-cell">24.65</div>
+                <div class="rate-cell">90.00</div>
+            </div>
+
+            <div class="rate-row">
+                <div class="date-cell">30-07-2025 03:42:33 PM</div>
+                <div class="rate-cell">24.65</div>
+                <div class="rate-cell">89.90</div>
+            </div>
+
+            <div class="rate-row">
+                <div class="date-cell">23-07-2025 03:32:51 PM</div>
+                <div class="rate-cell">24.55</div>
+                <div class="rate-cell">89.60</div>
+            </div>
+
+            <div class="rate-row">
+                <div class="date-cell">22-07-2025 03:36:27 PM</div>
+                <div class="rate-cell">24.50</div>
+                <div class="rate-cell">89.60</div>
+            </div>
+
+            <div class="rate-row">
+                <div class="date-cell">21-07-2025 03:43:58 PM</div>
+                <div class="rate-cell">24.45</div>
+                <div class="rate-cell">89.40</div>
+            </div>
+
+            <div class="rate-row">
+                <div class="date-cell">19-07-2025 05:31:14 PM</div>
+                <div class="rate-cell">24.45</div>
+                <div class="rate-cell">89.30</div>
+            </div>
+
+            <div class="rate-row">
+                <div class="date-cell">17-07-2025 04:18:29 PM</div>
+                <div class="rate-cell">24.40</div>
+                <div class="rate-cell">89.10</div>
+            </div>
+
+            <div class="rate-row">
+                <div class="date-cell">15-07-2025 04:02:37 PM</div>
+                <div class="rate-cell">24.35</div>
+                <div class="rate-cell">89.10</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
